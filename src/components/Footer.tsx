@@ -32,10 +32,14 @@ export function Footer() {
 
                     <StaggerItem>
                         <h4 className="font-bold text-brand-dark mb-4 tracking-wide text-sm uppercase">Endereço</h4>
-                        <div className="flex items-start gap-3 text-gray-500 text-sm">
-                            <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
-                            <span>Bento Gonçalves - RS<br />Atendemos toda a região.</span>
-                        </div>
+                        <a href="https://maps.app.goo.gl/QKJVN8rerks7D3LS9" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-500 hover:text-brand-primary transition-colors text-sm group">
+                            <MapPin className="w-4 h-4 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
+                            <span>
+                                R. Carlos Gomes, 518 - São Roque<br />
+                                Bento Gonçalves - RS, 95708-500<br />
+                                <span className="text-brand-primary/80 text-xs mt-1 block font-medium">Atendemos toda a região.</span>
+                            </span>
+                        </a>
                     </StaggerItem>
 
                     <StaggerItem>
