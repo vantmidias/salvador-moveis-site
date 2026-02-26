@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #D4AF37;
+  /* Dourado / Ouro extraído da Logo */
+  --color-brand-secondary: #aa8c2c;
+  --color-brand-dark: #1a1a1a;
+  /* Escuro Chumbo da Logo */
+  --color-brand-light: #FDFBF7;
+  /* Off-white amarelado sutil para combinar com dourado */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-light text-brand-dark antialiased;
+  }
+}
