@@ -50,20 +50,10 @@ export function InstagramSection() {
                     </div>
                 </FadeIn>
 
-                {/* LightWidget Script */}
-                <Script src="https://cdn.lightwidget.com/widgets/lightwidget.js" strategy="lazyOnload" />
-
-                {/* LightWidget Iframe */}
+                {/* TrustIndex Feed Script */}
                 <FadeIn direction="up" delay={0.2}>
-                    <div className="w-full relative min-h-[400px]">
-                        <iframe
-                            src="//lightwidget.com/widgets/c29854b056f65bcfb977b45221cddee8.html"
-                            scrolling="no"
-                            // @ts-ignore: Propriedade legacy exigida pelo Lightwidget
-                            allowtransparency="true"
-                            className="lightwidget-widget"
-                            style={{ width: "100%", border: 0, overflow: "hidden" }}
-                        ></iframe>
+                    <div className="w-full relative min-h-[400px] flex items-center justify-center">
+                        <Script src="https://cdn.trustindex.io/loader-feed.js?73bc50365d59817b1216754133a" strategy="lazyOnload" />
                     </div>
                 </FadeIn>
             </Container>
