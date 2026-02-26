@@ -47,7 +47,7 @@ export function Hero() {
                     <FadeIn delay={0.4}>
                         <div className="flex flex-col sm:flex-row gap-4">
                             <a
-                                href="https://wa.me/5554991404852"
+                                href="https://wa.me/555496575742"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center gap-2 bg-brand-primary hover:bg-brand-secondary text-white px-8 py-4 rounded-full font-semibold transition-all group shadow-lg shadow-brand-primary/20"

@@ -68,7 +68,7 @@ export function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="https://wa.me/5554991404852"
+                        href="https://wa.me/555496575742"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="bg-brand-primary text-white px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-brand-secondary transition-colors"
@@ -104,7 +104,7 @@ export function Navbar() {
                         </a>
                     ))}
                     <a
-                        href="https://wa.me/5554991404852"
+                        href="https://wa.me/555496575742"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-full text-center bg-brand-primary text-white px-6 py-3 rounded-md font-semibold mt-2"

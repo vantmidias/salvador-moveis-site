@@ -100,7 +100,7 @@ export function Gallery() {
                 <div className="mt-16 text-center">
                     <FadeIn direction="up">
                         <a
-                            href="https://wa.me/5554991404852"
+                            href="https://wa.me/555496575742"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-block bg-brand-dark text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-colors"
