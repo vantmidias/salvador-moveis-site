@@ -9,14 +9,14 @@ export function Footer() {
         <footer className="bg-brand-dark pt-20 pb-10 overflow-hidden">
             <Container>
                 <StaggerContainer delayChildren={0.1} staggerChildren={0.1} className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                    <StaggerItem className="md:col-span-1 border-r border-white/10">
-                        <h3 className="font-outfit font-bold text-2xl text-white mb-4">Salvador Móveis</h3>
+                    <StaggerItem className="md:col-span-1 border-b pb-8 md:pb-0 md:border-b-0 md:border-r border-white/10">
+                        <h3 className="font-outfit font-bold text-2xl text-white mb-4">Salvador Móveis Sob Medida</h3>
                         <p className="text-gray-400 font-light text-sm max-w-[200px]">
                             Elegância e sofisticação em móveis sob medida para o seu lar ou empresa.
                         </p>
                     </StaggerItem>
 
-                    <StaggerItem>
+                    <StaggerItem className="md:col-span-1 border-b pb-8 md:pb-0 md:border-b-0 md:border-r border-white/10">
                         <h4 className="font-bold text-white mb-4 tracking-wide text-sm uppercase">Contato</h4>
                         <div className="space-y-4">
                             <a href="https://wa.me/5554991404852" className="flex items-center gap-3 text-gray-400 hover:text-brand-primary transition-colors text-sm">
@@ -30,7 +30,7 @@ export function Footer() {
                         </div>
                     </StaggerItem>
 
-                    <StaggerItem>
+                    <StaggerItem className="md:col-span-1 border-b pb-8 md:pb-0 md:border-b-0 md:border-r border-white/10">
                         <h4 className="font-bold text-white mb-4 tracking-wide text-sm uppercase">Endereço</h4>
                         <a href="https://maps.app.goo.gl/QKJVN8rerks7D3LS9" target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-gray-400 hover:text-brand-primary transition-colors text-sm group">
                             <MapPin className="w-4 h-4 mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
@@ -42,7 +42,7 @@ export function Footer() {
                         </a>
                     </StaggerItem>
 
-                    <StaggerItem>
+                    <StaggerItem className="md:col-span-1">
                         <h4 className="font-bold text-white mb-4 tracking-wide text-sm uppercase">Social</h4>
                         <div className="flex flex-col gap-2">
                             <a href="https://www.instagram.com/salvador.moveis/" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit items-center gap-2 bg-white/5 text-white px-4 py-2 rounded-lg hover:bg-brand-primary transition-all text-sm font-medium border border-white/10">

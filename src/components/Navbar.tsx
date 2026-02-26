@@ -39,7 +39,7 @@ export function Navbar() {
                 <a href="/" className="flex items-center gap-3">
                     <Image
                         src="/portfolio/Logo/logo.png"
-                        alt="Salvador Móveis"
+                        alt="Salvador Móveis Sob Medida"
                         width={48}
                         height={48}
                         className="object-contain"
@@ -49,7 +49,7 @@ export function Navbar() {
                         "font-outfit font-bold text-xl tracking-tight transition-colors",
                         isScrolled ? "text-brand-dark" : "text-white"
                     )}>
-                        Salvador Móveis
+                        Salvador Móveis Sob Medida
                     </span>
                 </a>
 
