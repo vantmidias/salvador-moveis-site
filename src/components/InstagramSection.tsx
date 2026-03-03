@@ -1,20 +1,24 @@
 "use client";
 
 import { Container } from "@/components/ui/container";
-import Image from "next/image";
-import { Instagram, Heart, MessageCircle } from "lucide-react";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
-
-const IG_POSTS = [
-    { id: 1, src: "/portfolio/cozinhas/1.JPG", likes: 142, comments: 12 },
-    { id: 2, src: "/portfolio/Painéis/3.JPG", likes: 89, comments: 5 },
-    { id: 3, src: "/portfolio/Dormitórios/5.JPG", likes: 214, comments: 18 },
-    { id: 4, src: "/portfolio/Banheiros/1.JPG", likes: 167, comments: 9 },
-    { id: 5, src: "/portfolio/Todos/12.JPG", likes: 134, comments: 14 },
-    { id: 6, src: "/portfolio/cozinhas/9.JPG", likes: 256, comments: 22 },
-];
+import { useEffect, useRef } from "react";
+import { Instagram } from "lucide-react";
+import { FadeIn } from "@/components/ui/fade-in";
 
 export function InstagramSection() {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!containerRef.current) return;
+        if (containerRef.current.querySelector('script')) return;
+
+        // O Script do Elfsight
+        const script = document.createElement("script");
+        script.src = "https://elfsightcdn.com/platform.js";
+        script.async = true;
+        containerRef.current.appendChild(script);
+    }, []);
+
     return (
         <section className="py-24 bg-white overflow-hidden">
             <Container>
@@ -44,38 +48,12 @@ export function InstagramSection() {
                     </FadeIn>
                 </div>
 
-                <StaggerContainer>
-                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        {IG_POSTS.map((post) => (
-                            <StaggerItem key={post.id}>
-                                <a
-                                    href="https://www.instagram.com/salvadormoveis.rs/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group relative aspect-square block rounded-xl overflow-hidden bg-gray-100"
-                                >
-                                    <Image
-                                        src={post.src}
-                                        alt="Instagram Post"
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
-                                    {/* Overlay On Hover */}
-                                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                                        <div className="flex items-center gap-1.5 text-white font-bold text-sm">
-                                            <Heart className="w-5 h-5 fill-white" />
-                                            <span>{post.likes}</span>
-                                        </div>
-                                        <div className="flex items-center gap-1.5 text-white font-bold text-sm">
-                                            <MessageCircle className="w-5 h-5 fill-white" />
-                                            <span>{post.comments}</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </StaggerItem>
-                        ))}
+                <FadeIn direction="up" delay={0.2}>
+                    <div ref={containerRef} className="w-full relative min-h-[400px]">
+                        {/* A div do Elfsight */}
+                        <div className="elfsight-app-16cec962-d4b0-45f7-ac63-b71f79feee4a" data-elfsight-app-lazy></div>
                     </div>
-                </StaggerContainer>
+                </FadeIn>
             </Container>
         </section>
     );
