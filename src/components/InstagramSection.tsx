@@ -12,10 +12,11 @@ export function InstagramSection() {
         if (!containerRef.current) return;
         if (containerRef.current.querySelector('script')) return;
 
-        // O Script do Elfsight
+        // O Novo Script do TrustIndex
         const script = document.createElement("script");
-        script.src = "https://elfsightcdn.com/platform.js";
+        script.src = "https://cdn.trustindex.io/loader-feed.js?0cb46d4664f3164e9b96fb5a8ce";
         script.async = true;
+        script.defer = true;
         containerRef.current.appendChild(script);
     }, []);
 
@@ -50,8 +51,7 @@ export function InstagramSection() {
 
                 <FadeIn direction="up" delay={0.2}>
                     <div ref={containerRef} className="w-full relative min-h-[400px]">
-                        {/* A div do Elfsight */}
-                        <div className="elfsight-app-16cec962-d4b0-45f7-ac63-b71f79feee4a" data-elfsight-app-lazy></div>
+                        {/* A div do TrustIndex será renderizada aqui via JS */}
                     </div>
                 </FadeIn>
             </Container>
