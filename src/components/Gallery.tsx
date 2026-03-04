@@ -8,8 +8,8 @@ import { X } from "lucide-react";
 
 import portfolioImagesData from "@/data/portfolio.json";
 
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/ui/fade-in";
-
+import { FadeIn } from "@/components/ui/fade-in";
+import { motion, AnimatePresence } from "framer-motion";
 export function Gallery() {
     const [activeCategory, setActiveCategory] = useState("Todos");
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -72,30 +72,39 @@ export function Gallery() {
                 </FadeIn>
 
                 {/* Grid - 4 columns on large screens. Limiting to 16 images on "Todos" to fill precisely 4x4 */}
-                <StaggerContainer delayChildren={0.3} staggerChildren={0.1} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    {filteredImages.slice(0, activeCategory === "Todos" ? 16 : undefined).map((img) => (
-                        <StaggerItem key={img.id}>
-                            <div
-                                onClick={() => setSelectedImage(img.src)}
-                                className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-gray-200"
+                <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <AnimatePresence mode="popLayout">
+                        {filteredImages.slice(0, activeCategory === "Todos" ? 16 : undefined).map((img) => (
+                            <motion.div
+                                layout
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0.8 }}
+                                transition={{ duration: 0.3 }}
+                                key={img.id}
                             >
-                                <Image
-                                    src={img.src}
-                                    alt={`Projeto de ${img.category}`}
-                                    fill
-                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                                />
-                                {/* Overlay on hover */}
-                                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <span className="text-white font-outfit font-bold tracking-wide border border-white/50 px-4 py-2 text-sm rounded-full backdrop-blur-sm">
-                                        Ampliar
-                                    </span>
+                                <div
+                                    onClick={() => setSelectedImage(img.src)}
+                                    className="group relative aspect-square rounded-2xl overflow-hidden cursor-pointer bg-gray-200"
+                                >
+                                    <Image
+                                        src={img.src}
+                                        alt={`Projeto de ${img.category}`}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                                    />
+                                    {/* Overlay on hover */}
+                                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <span className="text-white font-outfit font-bold tracking-wide border border-white/50 px-4 py-2 text-sm rounded-full backdrop-blur-sm">
+                                            Ampliar
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        </StaggerItem>
-                    ))}
-                </StaggerContainer>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
 
                 <div className="mt-16 text-center">
                     <FadeIn direction="up">
